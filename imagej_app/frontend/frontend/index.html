@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ImageJ Batch Studio</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>🧪 ImageJ Batch Studio</h1>
+    <p>このソフトを使用する人は森下　俊哉と交渉してください</p>
+    <p>TIF連結 → Brightness → Invert → speed=20 → GIF</p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Input</h2>
+      <label class="label">TIF/TIFF（複数選択）</label>
+      <input id="files" type="file" accept=".tif,.tiff" multiple />
+
+      <div class="row">
+        <div>
+          <label class="label">Speed</label>
+          <input id="speed" type="number" value="20" min="1" max="120"/>
+        </div>
+        <button id="run" class="btn">Generate</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class='card gallery'>
+        <h2>Digest</h2>
+        <div id="digest" class="thumb-row"></div>
+    </section>
+
+    <section class="card">
+      <h2>Preview</h2>
+      <div class="muted">処理結果（GIF）をここに表示</div>
+      <img id="preview" class="preview" alt="preview" />
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
